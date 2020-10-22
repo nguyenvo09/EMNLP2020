@@ -1,0 +1,16 @@
+dill
+tqdm==4.31.1
+pandas==0.23.1
+nltk==3.4.5
+boto3
+requests
+regex
+sacremoses
+scipy
+sklearn
+hyperopt
+Pillow
+tensorboardX==1.4
+spacy==2.2.3
+overrides
+h5py==2.10.0
