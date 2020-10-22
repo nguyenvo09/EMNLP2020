@@ -1,0 +1,6 @@
+formatted_data/*
+images_data/*
+raw_images/*
+*.pyc
+.idea/*
+logs/*
