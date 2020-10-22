@@ -24,9 +24,11 @@ Please cite our work as follows:
 
 ```
 @inproceedings{vo2020facts,
-	title={Where Are the Facts? Searching for Fact-checked Information to Alleviate the Spread of Fake News},
+	title={Where Are the Facts? Searching for Fact-checked Information 
+	       to Alleviate the Spread of Fake News},
 	author={Vo, Nguyen and Lee, Kyumin},
-	booktitle={Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP 2020)},
+	booktitle={Proceedings of the 2020 Conference on Empirical Methods 
+	           in Natural Language Processing (EMNLP 2020)},
 	year={2020}
 }
 ```
