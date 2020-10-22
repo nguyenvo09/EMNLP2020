@@ -1,4 +1,5 @@
-formatted_data/*
+formatted_data/FindFCArticlesForOriginalTweet/*
+formatted_data/POLITIFACT.COM/*
 images_data/*
 raw_images/*
 *.pyc
