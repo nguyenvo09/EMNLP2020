@@ -375,21 +375,12 @@ class DenseBaselineFitter:
         ndcg_test2 = result_test2["ndcg"]
         ndcg_at_1_test2 = result_test2["ndcg@1"]
 
-        assert len(test3.unique_queries_test) in KeyWordSettings.QueryCountTest
-        result_test3, error_analysis_test = self.evaluate(test3, topN, output_ranking = True)
-        hits_test3 = result_test3["hits"]
-        ndcg_test3 = result_test3["ndcg"]
-        ndcg_at_1_test3 = result_test3["ndcg@1"]
-
         FileHandler.save_error_analysis_test2(json.dumps(error_analysis_val, sort_keys = True, indent = 2))
-        FileHandler.save_error_analysis_test3(json.dumps(error_analysis_test, sort_keys = True, indent = 2))
         FileHandler.myprint('Best Test2_hard hits@%d = %.5f | Best Test2_hard ndcg@%d = %.5f '
-                            '|Best Test3_hard hits@%d = %.5f |Best Test3_hard ndcg@%d = %.5f'
-                            '|Best Test2_hard ndcg@1 = %.5f |Best Test3_hard ndcg@1 = %.5f'
-                            % (topN, hits_test2, topN, ndcg_test2, topN, hits_test3, topN, ndcg_test3,
-                               ndcg_at_1_test2, ndcg_at_1_test3))
+                            '|Best Test2_hard ndcg@1 = %.5f '
+                            % (topN, hits_test2, topN, ndcg_test2, ndcg_at_1_test2))
 
-        return hits_test2, ndcg_test2, hits_test3, ndcg_test3
+        return hits_test2, ndcg_test2
 
     def evaluate(self, testRatings: interactions.MatchInteraction, K: int, output_ranking = False, **kargs):
         """

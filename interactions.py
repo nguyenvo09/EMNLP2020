@@ -9,7 +9,6 @@ from handlers.output_handler import FileHandler
 class MatchInteraction(object):
 
     def __init__(self, data_pack: matchzoo.DataPack, **kargs):
-        # Note that, these indices are not from 0.
         FileHandler.myprint("Converting DataFrame to Normal Dictionary of Data")
         self.unique_query_ids, \
         self.dict_query_contents, \
@@ -20,8 +19,6 @@ class MatchInteraction(object):
                                                               raw_text_key = "raw_text_left")
         self.data_pack = data_pack
         assert len(self.unique_query_ids) == len(set(self.unique_query_ids)), "Must be unique ids"
-        """ Why do I need to sort it? I have no idea why did I do it? """
-
         self.unique_doc_ids, \
         self.dict_doc_contents, \
         self.dict_doc_lengths, \
@@ -31,7 +28,7 @@ class MatchInteraction(object):
                                                             raw_text_key = "raw_text_right")
 
         assert len(self.unique_doc_ids) == len(set(self.unique_doc_ids)), "Must be unique ids for doc ids"
-        assert len(self.unique_query_ids) != len(self.unique_doc_ids), "Impossible to have equal number of docs and number of original tweets"
+        assert len(self.unique_query_ids) != len(self.unique_doc_ids)
 
         self.pos_queries, \
         self.pos_docs, \
@@ -56,10 +53,9 @@ class MatchInteraction(object):
         """ Converting the dataframe of interactions """
         ids, contents_dict, lengths_dict, position_dict = [], {}, {}, {}
         raw_content_dict = {}
-        # Why don't we use the queryID as the key for dictionary????
         FileHandler.myprint("[NOTICE] MatchZoo use queryID and docID as index in dataframe left and right, "
                             "therefore, iterrows will return index which is left_id or right_id")
-        for index, row in part.iterrows(): # very dangerous, be careful because it may change order!!!
+        for index, row in part.iterrows():
             ids.append(index)
             text_ = row[text_key]  # text_ here is converted to numbers and padded
             raw_content_dict[index] = row[raw_text_key]
@@ -76,7 +72,7 @@ class MatchInteraction(object):
 
     def convert_relations(self, relation: pd.DataFrame):
         """ Convert relations.
-        We want to retrieve positive interactions and negative interactions. Particularly,
+        Retrieving positive interactions and negative interactions. Particularly,
         for every pair (query, doc) = 1, we get a list of negatives of the query q
 
         It is possible that a query may have multiple positive docs. Therefore, negatives[q]
@@ -111,7 +107,6 @@ class MatchInteractionVisual(MatchInteraction):
 
     def __init__(self, data_pack: matchzoo.DataPack):
         super(MatchInteraction, self).__init__()
-        # Note that, these indices are not from 0.
         FileHandler.myprint("Converting DataFrame to Normal Dictionary of Data")
         self.unique_query_ids, \
         self.dict_query_contents, \
@@ -134,7 +129,7 @@ class MatchInteractionVisual(MatchInteraction):
                                                        raw_text_key = "raw_text_right", images_key="images_right")
 
         assert len(self.unique_doc_ids) == len(set(self.unique_doc_ids)), "Must be unique ids for doc ids"
-        assert len(self.unique_query_ids) != len(self.unique_doc_ids), "Impossible to have equal number of docs and number of original tweets"
+        assert len(self.unique_query_ids) != len(self.unique_doc_ids)
 
         self.pos_queries, \
         self.pos_docs, \
@@ -163,8 +158,6 @@ class MatchInteractionVisual(MatchInteraction):
         images_key = kargs["images_key"]
         ids, contents_dict, lengths_dict, position_dict, imgages_dict = [], {}, {}, {}, {}
         raw_content_dict = {}
-        FileHandler.myprint("[NOTICE] MatchZoo use queryID and docID as index in dataframe left and right, "
-                            "therefore, iterrows will return index which is left_id or right_id")
         for index, row in part.iterrows():
             ids.append(index)
             text_ = row[text_key]  # text_ here is converted to numbers and padded
@@ -178,5 +171,4 @@ class MatchInteractionVisual(MatchInteraction):
             lengths_dict[index] = length_
             position_dict[index] = np.pad(np.arange(length_) + 1, (0, len(text_) - length_), 'constant')
             imgages_dict[index] = row[images_key]  # added images
-        print("Unique size of left or right: ", text_key, len(ids))
         return np.array(ids), contents_dict, lengths_dict, raw_content_dict, position_dict, imgages_dict
