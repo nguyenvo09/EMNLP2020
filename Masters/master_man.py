@@ -1,4 +1,5 @@
 import sys
+sys.path.insert(0, '../EMNLP2020')
 sys.path.insert(0, '../../EMNLP2020')
 
 from Models import multimodal_attention_network
