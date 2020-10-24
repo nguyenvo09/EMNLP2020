@@ -23,8 +23,8 @@ This is the repository to reproduce results in the paper
 ![alt text](https://github.com/nguyenvo09/EMNLP2020/blob/master/examples/trump.png)
 ### Example 2: Vice president Biden
 ![alt text](https://github.com/nguyenvo09/EMNLP2020/blob/master/examples/biden.png)
-## Project structure
-After downloading and extracting data, the expected folder of `formatted_data` is as follows:
+## Structure of dataset folders
+After downloading and extracting data, the expected structure of `formatted_data` is as follows:
 ```
 EMNLP2020/
 ├── formatted_data
