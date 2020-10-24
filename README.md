@@ -18,44 +18,167 @@ updating hyperparams
 
 
 # Usage
-## [Step 1] Install required packages
+## 1. Install required packages
+We use Pytorch 0.4.1 and python 3.5. 
 ```
 pip install requirements.txt
 ```
-## [Step 2] Download and extract images data 
+## 2. Download and extract images data 
 ```
 pip install gdown
 cd EMNLP2020
 gdown https://drive.google.com/uc?id=17clyyiWyMDMUl6KqrDGGZCi2ZUeNSimh
 unzip images_data.zip
+rm images_data.zip
 ```
-## [Step 3.1] Running SC1 (Table 2 in our paper)
+If you want to see raw images, you can download it as follows:
+```
+gdown https://drive.google.com/u/0/uc?id=11sxoTJx49TBOde_xFY-fgWcG-aHNFhAp
+unzip raw_images.zip
+```
+## 3.1 Running SC1 (Table 2 in our paper)
 ### For Snopes
 ```
 gdown https://drive.google.com/uc?id=1S_WWvU1Q1bKElJ04E3MI7z_bLzPIPw5C
-unzip SC1_snopes.zip
-python Masters/master_man.py --article_mapped="formatted_data/Snopes/article_mapped.json" --attention_type=3 --batch_size=16 --conv_layers=2 --cuda=1 --elmo_feats="formatted_data/Snopes/elmo_features_avoid_bias" --filters=256 --filters_count_pacrr=16 --fixed_length_left=100 --fixed_length_right=1000 --head_cnn_type="pacrr_plane" --left_images_features="images_data/full_images_otweet_DataC_extracted_features.pth" --log="logs/man" --loss_type="hinge" --lr=0.001 --max_ngram=1 --n_img_in_doc=17 --n_img_in_query=4 --n_s=48 --num_neg=3 --path="formatted_data/Snopes/50_candidates_bm25_extended_reranking_and_text_in_img_avoid_bias" --query_mapped="formatted_data/Snopes/query_mapped.json" --right_images_features="images_data/full_Snopes_extracted_features.pth" --use_elmo=1 --use_visual=1							 
+unzip SC1_snopes.zip -d formatted_data/Snopes
+mkdir logs
+python Masters/master_man.py --attention_type=3 \
+                             --conv_layers=2 \
+                             --cuda=1 \
+                             --use_elmo=1 --use_visual=1 \
+                             --filters=256 \
+                             --filters_count_pacrr=16 \
+                             --fixed_length_left=50 \
+                             --fixed_length_right=1000 \
+                             --log="logs/man" \
+                             --loss_type="hinge" \
+                             --max_ngram=1 \
+                             --n_s=48 \
+                             --path="formatted_data/Snopes/50_candidates_bm25_extended_reranking" \
+                             --query_mapped="formatted_data/Snopes/query_mapped.json" \
+                             --article_mapped="formatted_data/Snopes/article_mapped.json" \
+							 --left_images_features="images_data/full_images_otweet_DataC_extracted_features.pth" \
+							 --right_images_features="images_data/full_Snopes_extracted_features.pth" \
+							 --elmo_feats="formatted_data/Snopes/elmo_features_only_text_in_tweets"
 ```
 ### For PolitiFact
 ```
 gdown https://drive.google.com/uc?id=1zeqlv3JeBn-ygn0juTO4SWBucZXIMKZi
-unzip SC1_politifact.zip
-python Masters/master_man.py --article_mapped="formatted_data/Politifact/article_mapped.json" --attention_type=3 --batch_size=16 --conv_layers=2 --cuda=1 --elmo_feats="formatted_data/Politifact/elmo_features_avoid_bias" --filters=256 --filters_count_pacrr=16 --fixed_length_left=100 --fixed_length_right=1000 --head_cnn_type="pacrr_plane" --left_images_features="images_data/full_images_otweet_DataC_extracted_features.pth" --log="logs/man" --loss_type="hinge" --lr=0.001 --max_ngram=1 --n_img_in_doc=17 --n_img_in_query=4 --n_s=48 --num_neg=3 --path="formatted_data/Snopes/50_candidates_bm25_extended_reranking_and_text_in_img_avoid_bias" --query_mapped="formatted_data/Snopes/query_mapped.json" --right_images_features="images_data/full_Snopes_extracted_features.pth" --use_elmo=1 --use_visual=1							 
+unzip SC1_politifact.zip -d formatted_data/Politifact
+python Masters/master_man.py --attention_type=3 \
+                             --conv_layers=2 \
+                             --cuda=1 \
+                             --use_elmo=1 --use_visual=1 \
+                             --filters=256 \
+                             --filters_count_pacrr=16 \
+                             --fixed_length_left=50 \
+                             --fixed_length_right=1000 \
+                             --log="logs/man" \
+                             --loss_type="hinge" \
+                             --max_ngram=1 \
+                             --n_s=48 \
+                             --path="formatted_data/Politifact/50_candidates_bm25_extended_reranking" \
+                             --query_mapped="formatted_data/Politifact/query_mapped.json" \
+                             --article_mapped="formatted_data/Politifact/article_mapped.json" \
+							 --left_images_features="images_data/resnet50_Polititact_queries_extracted_features.pth" \
+							 --right_images_features="images_data/resnet50_Politifact_documents_extracted_features.pth" \
+							 --elmo_feats="formatted_data/Politifact/elmo_features_only_text_in_tweets"
 ```
-## [Step 3.2] Running SC2 (Table 3 in our paper)
+## 3.2 Running SC2 (Table 3 in our paper)
 ### For Snopes dataset
 ```
 gdown https://drive.google.com/uc?id=1VDtJk_C-pZtBQXon2jvp4NTyxUnDv-gY
-unzip SC2_snopes.zip
-python Masters/master_man.py --article_mapped="formatted_data/Snopes/article_mapped.json" --attention_type=3 --batch_size=16 --conv_layers=2 --cuda=1 --elmo_feats="formatted_data/Snopes/elmo_features_avoid_bias" --filters=256 --filters_count_pacrr=16 --fixed_length_left=100 --fixed_length_right=1000 --head_cnn_type="pacrr_plane" --left_images_features="images_data/full_images_otweet_DataC_extracted_features.pth" --log="logs/man" --loss_type="hinge" --lr=0.001 --max_ngram=1 --n_img_in_doc=17 --n_img_in_query=4 --n_s=48 --num_neg=3 --path="formatted_data/Snopes/50_candidates_bm25_extended_reranking_and_text_in_img_avoid_bias" --query_mapped="formatted_data/Snopes/query_mapped.json" --right_images_features="images_data/full_Snopes_extracted_features.pth" --use_elmo=1 --use_visual=1							 
+unzip SC2_snopes.zip -d formatted_data/Snopes
+python Masters/master_man.py --attention_type=3 \
+                             --conv_layers=2 \
+                             --cuda=1 \
+                             --use_elmo=1 --use_visual=1 \
+                             --filters=256 \
+                             --filters_count_pacrr=16 \
+                             --fixed_length_left=50 \
+                             --fixed_length_right=1000 \
+                             --log="logs/man" \
+                             --loss_type="hinge" \
+                             --max_ngram=1 \
+                             --n_s=48 \
+                             --path="formatted_data/Snopes/50_candidates_bm25_extended_reranking_and_text_in_img" \
+                             --query_mapped="formatted_data/Snopes/query_mapped.json" \
+                             --article_mapped="formatted_data/Snopes/article_mapped.json" \
+							 --left_images_features="images_data/full_images_otweet_DataC_extracted_features.pth" \
+							 --right_images_features="images_data/full_Snopes_extracted_features.pth" \
+							 --elmo_feats="formatted_data/Snopes/elmo_features_use_text_in_img"
 ```
 ### For Politifact dataset
 ```
 gdown https://drive.google.com/uc?id=1UDPJdnawYZiicx02shywYGQ3c091Q8xW
-unzip SC2_politifact.zip
-python Masters/master_man.py --article_mapped="formatted_data/Politifact/article_mapped.json" --attention_type=3 --batch_size=16 --conv_layers=2 --cuda=1 --elmo_feats="formatted_data/Politifact/elmo_features_avoid_bias" --filters=256 --filters_count_pacrr=16 --fixed_length_left=100 --fixed_length_right=1000 --head_cnn_type="pacrr_plane" --left_images_features="images_data/full_images_otweet_DataC_extracted_features.pth" --log="logs/man" --loss_type="hinge" --lr=0.001 --max_ngram=1 --n_img_in_doc=17 --n_img_in_query=4 --n_s=48 --num_neg=3 --path="formatted_data/Snopes/50_candidates_bm25_extended_reranking_and_text_in_img_avoid_bias" --query_mapped="formatted_data/Snopes/query_mapped.json" --right_images_features="images_data/full_Snopes_extracted_features.pth" --use_elmo=1 --use_visual=1							 
+unzip SC2_politifact.zip -d formatted_data/Politifact
+python Masters/master_man.py --attention_type=3 \
+                             --conv_layers=2 \
+                             --cuda=1 \
+                             --use_elmo=1 --use_visual=1 \
+                             --filters=256 \
+                             --filters_count_pacrr=16 \
+                             --fixed_length_left=50 \
+                             --fixed_length_right=1000 \
+                             --log="logs/man" \
+                             --loss_type="hinge" \
+                             --max_ngram=1 \
+                             --n_s=48 \
+                             --path="formatted_data/Politifact/50_candidates_bm25_extended_reranking_and_text_in_img" \
+                             --query_mapped="formatted_data/Politifact/query_mapped.json" \
+                             --article_mapped="formatted_data/Politifact/article_mapped.json" \
+							 --left_images_features="images_data/resnet50_Polititact_queries_extracted_features.pth" \
+							 --right_images_features="images_data/resnet50_Politifact_documents_extracted_features.pth" \
+							 --elmo_feats="formatted_data/Politifact/elmo_features_use_text_in_img"
 ```
-
+## 3.3 Running SC2 with augmented data (Table 3 in our paper)
+This test is memory-intensive so we recommend to run this test on a server with 64Gb RAM. 
+### For Snopes dataset
+```
+gdown https://drive.google.com/u/0/uc?id=1GDONqAZ5lllmF-_XMgk4gVnJNyLP079v
+unzip augment_snopes.zip -d formatted_data/Snopes
+python Masters/master_man.py --attention_type=3 \
+                             --conv_layers=2 \
+                             --cuda=1 \
+                             --use_elmo=1 --use_visual=1 \
+                             --filters=256 \
+                             --filters_count_pacrr=16 \
+                             --fixed_length_left=50 \
+                             --fixed_length_right=1000 \
+                             --log="logs/man" \
+                             --loss_type="hinge" \
+                             --max_ngram=1 \
+                             --n_s=48 \
+                             --path="formatted_data/Snopes/50_candidates_bm25_extended_reranking_and_text_in_img_avoid_bias" \
+                             --query_mapped="formatted_data/Snopes/query_mapped.json" \
+                             --article_mapped="formatted_data/Snopes/article_mapped.json" \
+							 --left_images_features="images_data/full_images_otweet_DataC_extracted_features.pth" \
+							 --right_images_features="images_data/full_Snopes_extracted_features.pth" \
+							 --elmo_feats="formatted_data/Snopes/elmo_features_avoid_bias"
+```
+### For PolitiFact dataset
+```
+gdown https://drive.google.com/u/0/uc?id=10e1JhhbfQWYILkovaeopGuhD1VQ_ZPYc
+unzip augment_politifact.zip -d formatted_data/Politifact
+python Masters/master_man.py --attention_type=3 \
+                             --conv_layers=2 \
+                             --cuda=1 \
+                             --use_elmo=1 --use_visual=1 \
+                             --filters=256 \
+                             --filters_count_pacrr=16 \
+                             --fixed_length_left=50 \
+                             --fixed_length_right=1000 \
+                             --log="logs/man" \
+                             --loss_type="hinge" \
+                             --max_ngram=1 \
+                             --n_s=48 \
+                             --path="formatted_data/Politifact/50_candidates_bm25_extended_reranking_and_text_in_img_avoid_bias" \
+                             --query_mapped="formatted_data/Politifact/query_mapped.json" \
+                             --article_mapped="formatted_data/Politifact/article_mapped.json" \
+							 --left_images_features="images_data/resnet50_Polititact_queries_extracted_features.pth" \
+							 --right_images_features="images_data/resnet50_Politifact_documents_extracted_features.pth" \
+							 --elmo_feats="formatted_data/Politifact/elmo_features_avoid_bias"
+```
 # Citation
 Please cite our work as follows:
 

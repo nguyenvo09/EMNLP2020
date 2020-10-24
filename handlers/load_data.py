@@ -238,7 +238,8 @@ def read_images(data_packs: List[matchzoo.DataPack],
         img_paths = [pack.right["images_right"].progress_apply(lambda x: x[:max_len_images]).tolist() for pack in data_packs]
         img_paths = list(itertools.chain.from_iterable(img_paths))
 
-    fat_tensor, paths = torch.load(os.path.join("..", fat_pth_file))
+    # fat_tensor, paths = torch.load(os.path.join("..", fat_pth_file))
+    fat_tensor, paths = torch.load(fat_pth_file)
     mapper = dict(zip(paths, range(len(paths))))  # indices here are rows of `fat_tensor`
     assert len(paths) == fat_tensor.size(0)
     tsr = [torch.zeros((image_dim, )).float()]  # for padding!!!
