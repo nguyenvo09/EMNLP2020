@@ -19,13 +19,13 @@ This is the repository to reproduce results in the paper
 - Raw images extracted from tweets and fact-checking articles: https://drive.google.com/file/d/11sxoTJx49TBOde_xFY-fgWcG-aHNFhAp/view?usp=sharing
 
 ## Interesting misinformation and corresponding fact-checking articles in our datasets:
-### 1. President Obama 
+### Example 1: President Obama 
 ![alt text](https://github.com/nguyenvo09/EMNLP2020/blob/master/examples/obama.png)
-### 2. President Trump 
+### Example 2: President Trump 
 ![alt text](https://github.com/nguyenvo09/EMNLP2020/blob/master/examples/trump.png)
-### 3. Vice president Biden
+### Example 3: Vice president Biden
 ![alt text](https://github.com/nguyenvo09/EMNLP2020/blob/master/examples/biden.png)
-### 4. Secretary of State Clinton 
+### Example 4: Secretary of State Clinton 
 ![alt text](https://github.com/nguyenvo09/EMNLP2020/blob/master/examples/clinton.png)
 # Usage
 ## 1. Install required packages
@@ -67,9 +67,9 @@ python Masters/master_man.py --attention_type=4 \
                              --path="formatted_data/Snopes/50_candidates_bm25_extended_reranking" \
                              --query_mapped="formatted_data/Snopes/query_mapped.json" \
                              --article_mapped="formatted_data/Snopes/article_mapped.json" \
-							 --left_images_features="images_data/full_images_otweet_DataC_extracted_features.pth" \
-							 --right_images_features="images_data/full_Snopes_extracted_features.pth" \
-							 --elmo_feats="formatted_data/Snopes/elmo_features_only_text_in_tweets"
+                             --left_images_features="images_data/full_images_otweet_DataC_extracted_features.pth" \
+                             --right_images_features="images_data/full_Snopes_extracted_features.pth" \
+                             --elmo_feats="formatted_data/Snopes/elmo_features_only_text_in_tweets"
 ```
 ### For PolitiFact
 ```
@@ -90,9 +90,9 @@ python Masters/master_man.py --attention_type=4 \
                              --path="formatted_data/Politifact/50_candidates_bm25_extended_reranking" \
                              --query_mapped="formatted_data/Politifact/query_mapped.json" \
                              --article_mapped="formatted_data/Politifact/article_mapped.json" \
-							 --left_images_features="images_data/resnet50_Polititact_queries_extracted_features.pth" \
-							 --right_images_features="images_data/resnet50_Politifact_documents_extracted_features.pth" \
-							 --elmo_feats="formatted_data/Politifact/elmo_features_only_text_in_tweets"
+                             --left_images_features="images_data/resnet50_Polititact_queries_extracted_features.pth" \
+                             --right_images_features="images_data/resnet50_Politifact_documents_extracted_features.pth" \
+                             --elmo_feats="formatted_data/Politifact/elmo_features_only_text_in_tweets"
 ```
 ## 3.2 Running SC2 (MAN in Table 3 in our paper)
 ### For Snopes dataset
@@ -114,9 +114,9 @@ python Masters/master_man.py --attention_type=2 \
                              --path="formatted_data/Snopes/50_candidates_bm25_extended_reranking_and_text_in_img" \
                              --query_mapped="formatted_data/Snopes/query_mapped.json" \
                              --article_mapped="formatted_data/Snopes/article_mapped.json" \
-							 --left_images_features="images_data/full_images_otweet_DataC_extracted_features.pth" \
-							 --right_images_features="images_data/full_Snopes_extracted_features.pth" \
-							 --elmo_feats="formatted_data/Snopes/elmo_features_use_text_in_img"
+                             --left_images_features="images_data/full_images_otweet_DataC_extracted_features.pth" \
+                             --right_images_features="images_data/full_Snopes_extracted_features.pth" \
+                             --elmo_feats="formatted_data/Snopes/elmo_features_use_text_in_img"
 ```
 ### For Politifact dataset
 ```
@@ -137,9 +137,9 @@ python Masters/master_man.py --attention_type=2 \
                              --path="formatted_data/Politifact/50_candidates_bm25_extended_reranking_and_text_in_img" \
                              --query_mapped="formatted_data/Politifact/query_mapped.json" \
                              --article_mapped="formatted_data/Politifact/article_mapped.json" \
-							 --left_images_features="images_data/resnet50_Polititact_queries_extracted_features.pth" \
-							 --right_images_features="images_data/resnet50_Politifact_documents_extracted_features.pth" \
-							 --elmo_feats="formatted_data/Politifact/elmo_features_use_text_in_img"
+                             --left_images_features="images_data/resnet50_Polititact_queries_extracted_features.pth" \
+                             --right_images_features="images_data/resnet50_Politifact_documents_extracted_features.pth" \
+                             --elmo_feats="formatted_data/Politifact/elmo_features_use_text_in_img"
 ```
 ## 3.3 Running SC2 with augmented data (MAN-A in Table 3 in our paper)
 This test is memory-intensive so we recommend to run this test on a server with 64Gb RAM. 
@@ -162,9 +162,9 @@ python Masters/master_man.py --attention_type=2 \
                              --path="formatted_data/Snopes/50_candidates_bm25_extended_reranking_and_text_in_img_avoid_bias" \
                              --query_mapped="formatted_data/Snopes/query_mapped.json" \
                              --article_mapped="formatted_data/Snopes/article_mapped.json" \
-							 --left_images_features="images_data/full_images_otweet_DataC_extracted_features.pth" \
-							 --right_images_features="images_data/full_Snopes_extracted_features.pth" \
-							 --elmo_feats="formatted_data/Snopes/elmo_features_avoid_bias"
+                             --left_images_features="images_data/full_images_otweet_DataC_extracted_features.pth" \
+                             --right_images_features="images_data/full_Snopes_extracted_features.pth" \
+                             --elmo_feats="formatted_data/Snopes/elmo_features_avoid_bias"
 ```
 ### For PolitiFact dataset
 ```
@@ -185,9 +185,9 @@ python Masters/master_man.py --attention_type=4 \
                              --path="formatted_data/Politifact/50_candidates_bm25_extended_reranking_and_text_in_img_avoid_bias" \
                              --query_mapped="formatted_data/Politifact/query_mapped.json" \
                              --article_mapped="formatted_data/Politifact/article_mapped.json" \
-							 --left_images_features="images_data/resnet50_Polititact_queries_extracted_features.pth" \
-							 --right_images_features="images_data/resnet50_Politifact_documents_extracted_features.pth" \
-							 --elmo_feats="formatted_data/Politifact/elmo_features_avoid_bias"
+                             --left_images_features="images_data/resnet50_Polititact_queries_extracted_features.pth" \
+                             --right_images_features="images_data/resnet50_Politifact_documents_extracted_features.pth" \
+                             --elmo_feats="formatted_data/Politifact/elmo_features_avoid_bias"
 ```
 # Citation
 Please cite our work as follows:
