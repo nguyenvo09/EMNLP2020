@@ -16,10 +16,11 @@ This is the repository to reproduce results in the paper
 - Extracted features from ResNet50: https://drive.google.com/file/d/17clyyiWyMDMUl6KqrDGGZCi2ZUeNSimh/view?usp=sharing
 - Raw images extracted from tweets and fact-checking articles: https://drive.google.com/file/d/11sxoTJx49TBOde_xFY-fgWcG-aHNFhAp/view?usp=sharing
 
-## Interesting examples in our datasets:
+## Interesting misinformation in our datasets where our MAN correctly found FC-articles:
+- President Obama ![alt text](https://github.com/nguyenvo09/EMNLP2020/blob/master/examples/obama.png)
 - President Trump ![alt text](https://github.com/nguyenvo09/EMNLP2020/blob/master/examples/trump.png)
-
-
+- Vice president Biden ![alt text](https://github.com/nguyenvo09/EMNLP2020/blob/master/examples/biden.png)
+- Secretary of State Clinton ![alt text](https://github.com/nguyenvo09/EMNLP2020/blob/master/examples/clinton.png)
 # Usage
 ## 1. Install required packages
 We use Pytorch 0.4.1 and python 3.5. 
