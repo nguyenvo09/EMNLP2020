@@ -19,13 +19,13 @@ This is the repository to reproduce results in the paper
 - Raw images extracted from tweets and fact-checking articles: https://drive.google.com/file/d/11sxoTJx49TBOde_xFY-fgWcG-aHNFhAp/view?usp=sharing
 
 ## Interesting misinformation and corresponding fact-checking articles in our datasets:
-### President Obama 
+### 1. President Obama 
 ![alt text](https://github.com/nguyenvo09/EMNLP2020/blob/master/examples/obama.png)
-### President Trump 
+### 2. President Trump 
 ![alt text](https://github.com/nguyenvo09/EMNLP2020/blob/master/examples/trump.png)
-### Vice president Biden
+### 3. Vice president Biden
 ![alt text](https://github.com/nguyenvo09/EMNLP2020/blob/master/examples/biden.png)
-### Secretary of State Clinton 
+### 4. Secretary of State Clinton 
 ![alt text](https://github.com/nguyenvo09/EMNLP2020/blob/master/examples/clinton.png)
 # Usage
 ## 1. Install required packages
