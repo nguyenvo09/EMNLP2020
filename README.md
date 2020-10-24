@@ -23,6 +23,79 @@ This is the repository to reproduce results in the paper
 ![alt text](https://github.com/nguyenvo09/EMNLP2020/blob/master/examples/trump.png)
 ### Example 2: Vice president Biden
 ![alt text](https://github.com/nguyenvo09/EMNLP2020/blob/master/examples/biden.png)
+## Project structure
+After downloading and extracting data, the expected folder of `formatted_data` is as follows:
+```
+EMNLP2020/
+├── formatted_data
+│   ├── Politifact
+│   │   ├── 50_candidates_bm25_extended_reranking
+│   │   │   ├── Politifact.dev.tsv
+│   │   │   ├── Politifact.test.tsv
+│   │   │   ├── Politifact.test2_hard.tsv
+│   │   │   └── Politifact.train.tsv
+│   │   ├── 50_candidates_bm25_extended_reranking_and_text_in_img
+│   │   │   ├── Politifact.dev.tsv
+│   │   │   ├── Politifact.test.tsv
+│   │   │   ├── Politifact.test2_hard.tsv
+│   │   │   └── Politifact.train.tsv
+│   │   ├── 50_candidates_bm25_extended_reranking_and_text_in_img_avoid_bias
+│   │   │   ├── Politifact.dev.tsv
+│   │   │   ├── Politifact.test.tsv
+│   │   │   ├── Politifact.test2_hard.tsv
+│   │   │   └── Politifact.train.tsv
+│   │   ├── article_mapped.json
+│   │   ├── articles_content.json
+│   │   ├── elmo_features_avoid_bias
+│   │   │   ├── articles_feats.pth
+│   │   │   └── queries_feats.pth
+│   │   ├── elmo_features_only_text_in_tweets
+│   │   │   ├── articles_feats.pth
+│   │   │   └── queries_feats.pth
+│   │   ├── elmo_features_use_text_in_img
+│   │   │   ├── articles_feats.pth
+│   │   │   └── queries_feats.pth
+│   │   ├── queries_content.json
+│   │   ├── query.negatives
+│   │   ├── query_article_interaction.csv
+│   │   └── query_mapped.json
+│   └── Snopes
+│       ├── 50_candidates_bm25_extended_reranking
+│       │   ├── Snopes.dev.tsv
+│       │   ├── Snopes.test.tsv
+│       │   ├── Snopes.test2_hard.tsv
+│       │   └── Snopes.train.tsv
+│       ├── 50_candidates_bm25_extended_reranking_and_text_in_img
+│       │   ├── Snopes.dev.tsv
+│       │   ├── Snopes.test.tsv
+│       │   ├── Snopes.test2_hard.tsv
+│       │   └── Snopes.train.tsv
+│       ├── 50_candidates_bm25_extended_reranking_and_text_in_img_avoid_bias
+│       │   ├── Snopes.dev.tsv
+│       │   ├── Snopes.test.tsv
+│       │   ├── Snopes.test2_hard.tsv
+│       │   └── Snopes.train.tsv
+│       ├── article_mapped.json
+│       ├── articles_content.json
+│       ├── elmo_features_avoid_bias
+│       │   ├── articles_feats.pth
+│       │   └── queries_feats.pth
+│       ├── elmo_features_only_text_in_tweets
+│       │   ├── articles_feats.pth
+│       │   └── queries_feats.pth
+│       ├── elmo_features_use_text_in_img
+│       │   ├── articles_feats.pth
+│       │   └── queries_feats.pth
+│       ├── queries_content.json
+│       ├── query.negatives
+│       ├── query_article_interaction.csv
+│       └── query_mapped.json
+├── images_data
+│   ├── full_Snopes_extracted_features.pth
+│   ├── full_images_otweet_DataC_extracted_features.pth
+│   ├── resnet50_Politifact_documents_extracted_features.pth
+│   └── resnet50_Polititact_queries_extracted_features.pth
+```
 # Usage
 ## 1. Install required packages
 We use Pytorch 0.4.1 and python 3.5. 
