@@ -57,9 +57,9 @@ python Masters/master_man.py --attention_type=3 \
                              --path="formatted_data/Snopes/50_candidates_bm25_extended_reranking" \
                              --query_mapped="formatted_data/Snopes/query_mapped.json" \
                              --article_mapped="formatted_data/Snopes/article_mapped.json" \
-							 --left_images_features="images_data/full_images_otweet_DataC_extracted_features.pth" \
-							 --right_images_features="images_data/full_Snopes_extracted_features.pth" \
-							 --elmo_feats="formatted_data/Snopes/elmo_features_only_text_in_tweets"
+                             --left_images_features="images_data/full_images_otweet_DataC_extracted_features.pth" \
+                             --right_images_features="images_data/full_Snopes_extracted_features.pth" \
+                             --elmo_feats="formatted_data/Snopes/elmo_features_only_text_in_tweets"
 ```
 ### For PolitiFact
 ```
@@ -80,9 +80,9 @@ python Masters/master_man.py --attention_type=3 \
                              --path="formatted_data/Politifact/50_candidates_bm25_extended_reranking" \
                              --query_mapped="formatted_data/Politifact/query_mapped.json" \
                              --article_mapped="formatted_data/Politifact/article_mapped.json" \
-							 --left_images_features="images_data/resnet50_Polititact_queries_extracted_features.pth" \
-							 --right_images_features="images_data/resnet50_Politifact_documents_extracted_features.pth" \
-							 --elmo_feats="formatted_data/Politifact/elmo_features_only_text_in_tweets"
+                             --left_images_features="images_data/resnet50_Polititact_queries_extracted_features.pth" \
+                             --right_images_features="images_data/resnet50_Politifact_documents_extracted_features.pth" \
+                             --elmo_feats="formatted_data/Politifact/elmo_features_only_text_in_tweets"
 ```
 ## 3.2 Running SC2 (Table 3 in our paper)
 ### For Snopes dataset
@@ -104,9 +104,9 @@ python Masters/master_man.py --attention_type=3 \
                              --path="formatted_data/Snopes/50_candidates_bm25_extended_reranking_and_text_in_img" \
                              --query_mapped="formatted_data/Snopes/query_mapped.json" \
                              --article_mapped="formatted_data/Snopes/article_mapped.json" \
-							 --left_images_features="images_data/full_images_otweet_DataC_extracted_features.pth" \
-							 --right_images_features="images_data/full_Snopes_extracted_features.pth" \
-							 --elmo_feats="formatted_data/Snopes/elmo_features_use_text_in_img"
+                             --left_images_features="images_data/full_images_otweet_DataC_extracted_features.pth" \
+                             --right_images_features="images_data/full_Snopes_extracted_features.pth" \
+                             --elmo_feats="formatted_data/Snopes/elmo_features_use_text_in_img"
 ```
 ### For Politifact dataset
 ```
@@ -127,9 +127,9 @@ python Masters/master_man.py --attention_type=3 \
                              --path="formatted_data/Politifact/50_candidates_bm25_extended_reranking_and_text_in_img" \
                              --query_mapped="formatted_data/Politifact/query_mapped.json" \
                              --article_mapped="formatted_data/Politifact/article_mapped.json" \
-							 --left_images_features="images_data/resnet50_Polititact_queries_extracted_features.pth" \
-							 --right_images_features="images_data/resnet50_Politifact_documents_extracted_features.pth" \
-							 --elmo_feats="formatted_data/Politifact/elmo_features_use_text_in_img"
+                             --left_images_features="images_data/resnet50_Polititact_queries_extracted_features.pth" \
+                             --right_images_features="images_data/resnet50_Politifact_documents_extracted_features.pth" \
+                             --elmo_feats="formatted_data/Politifact/elmo_features_use_text_in_img"
 ```
 ## 3.3 Running SC2 with augmented data (Table 3 in our paper)
 This test is memory-intensive so we recommend to run this test on a server with 64Gb RAM. 
@@ -152,9 +152,9 @@ python Masters/master_man.py --attention_type=3 \
                              --path="formatted_data/Snopes/50_candidates_bm25_extended_reranking_and_text_in_img_avoid_bias" \
                              --query_mapped="formatted_data/Snopes/query_mapped.json" \
                              --article_mapped="formatted_data/Snopes/article_mapped.json" \
-							 --left_images_features="images_data/full_images_otweet_DataC_extracted_features.pth" \
-							 --right_images_features="images_data/full_Snopes_extracted_features.pth" \
-							 --elmo_feats="formatted_data/Snopes/elmo_features_avoid_bias"
+                             --left_images_features="images_data/full_images_otweet_DataC_extracted_features.pth" \
+                             --right_images_features="images_data/full_Snopes_extracted_features.pth" \
+                             --elmo_feats="formatted_data/Snopes/elmo_features_avoid_bias"
 ```
 ### For PolitiFact dataset
 ```
@@ -175,9 +175,9 @@ python Masters/master_man.py --attention_type=3 \
                              --path="formatted_data/Politifact/50_candidates_bm25_extended_reranking_and_text_in_img_avoid_bias" \
                              --query_mapped="formatted_data/Politifact/query_mapped.json" \
                              --article_mapped="formatted_data/Politifact/article_mapped.json" \
-							 --left_images_features="images_data/resnet50_Polititact_queries_extracted_features.pth" \
-							 --right_images_features="images_data/resnet50_Politifact_documents_extracted_features.pth" \
-							 --elmo_feats="formatted_data/Politifact/elmo_features_avoid_bias"
+                             --left_images_features="images_data/resnet50_Polititact_queries_extracted_features.pth" \
+                             --right_images_features="images_data/resnet50_Politifact_documents_extracted_features.pth" \
+                             --elmo_feats="formatted_data/Politifact/elmo_features_avoid_bias"
 ```
 # Citation
 Please cite our work as follows:
