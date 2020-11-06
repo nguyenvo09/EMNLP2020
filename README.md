@@ -269,3 +269,5 @@ Please cite our work as follows:
 	year={2020}
 }
 ```
+# Slides of our talk at EMNLP 2020
+https://slideslive.com/38938793/where-are-the-facts-searching-for-factchecked-information-to-alleviate-the-spread-of-fake-news
