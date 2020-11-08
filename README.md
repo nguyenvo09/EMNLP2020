@@ -21,7 +21,7 @@ This is the repository to reproduce results in the paper
 ## Interesting misinformation and corresponding fact-checking articles in our datasets:
 ### Example 1: President Trump 
 ![alt text](https://github.com/nguyenvo09/EMNLP2020/blob/master/examples/trump.png)
-### Example 2: Vice president Biden
+### Example 2: President Biden
 ![alt text](https://github.com/nguyenvo09/EMNLP2020/blob/master/examples/biden.png)
 ## Structure of dataset folders
 After downloading and extracting data, the expected structure of `formatted_data` is as follows:
