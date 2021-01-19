@@ -259,7 +259,7 @@ python Masters/master_man.py --attention_type=4 \
                              --elmo_feats="formatted_data/Politifact/elmo_features_avoid_bias"
 ```
 # Citation
-If you feel our paper and resources are useful, please cite our work as follows:
+If you feel our paper and resources are useful, please consider citing our work as follows:
 ```
 @inproceedings{vo2020facts,
 	title={Where Are the Facts? Searching for Fact-checked Information to Alleviate the Spread of Fake News},
