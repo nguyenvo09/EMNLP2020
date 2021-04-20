@@ -100,7 +100,7 @@ EMNLP2020/
 ## 1. Install required packages
 We use Pytorch 0.4.1 and python 3.5. 
 ```
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 ## 2. Download and extract images data 
 ```
