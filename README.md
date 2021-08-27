@@ -2,9 +2,6 @@
 This is the repository to reproduce results in the paper
 "Where Are the Facts? Searching for Fact-checked Information to Alleviate the Spread of Fake News", EMNLP 2020.  
 
-# Slides of our talk at EMNLP 2020
-https://slideslive.com/38938793/where-are-the-facts-searching-for-factchecked-information-to-alleviate-the-spread-of-fake-news
-
 # Multimodal Attention Network
 ![alt text](https://github.com/nguyenvo09/EMNLP2020/blob/master/examples/man.png)
 
@@ -272,3 +269,6 @@ If you feel our paper and resources are useful, please consider citing our work 
 	year={2020}
 }
 ```
+
+# Slides of our talk at EMNLP 2020
+https://slideslive.com/38938793/where-are-the-facts-searching-for-factchecked-information-to-alleviate-the-spread-of-fake-news
