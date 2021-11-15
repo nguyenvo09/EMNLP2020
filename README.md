@@ -19,11 +19,6 @@ This is the repository to reproduce results in the paper
 - Extracted features from ResNet50: https://drive.google.com/file/d/17clyyiWyMDMUl6KqrDGGZCi2ZUeNSimh/view?usp=sharing
 - Raw images extracted from tweets and fact-checking articles: https://drive.google.com/file/d/11sxoTJx49TBOde_xFY-fgWcG-aHNFhAp/view?usp=sharing
 
-## Interesting misinformation and corresponding fact-checking articles in our datasets:
-### Example 1: President Trump 
-![alt text](https://github.com/nguyenvo09/EMNLP2020/blob/master/examples/trump.png)
-### Example 2: President Biden
-![alt text](https://github.com/nguyenvo09/EMNLP2020/blob/master/examples/biden.png)
 ## Structure of dataset folders
 After downloading and extracting data, the expected structure of `formatted_data` is as follows:
 ```
